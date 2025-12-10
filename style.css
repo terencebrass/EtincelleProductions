@@ -95,7 +95,7 @@ header {
     position: relative;
     display: inline-block;
     transform: translateY(-20%);
-
+    z-index: -10;
 }
 
 .hero-illu {
@@ -110,3 +110,4 @@ header {
     width: 0%; /* taille du logo superposé */
     transform: translateY(-10%);
 }
+
