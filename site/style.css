@@ -5,35 +5,59 @@
     box-sizing: border-box;
 }
 
-/* Background répétitif */
-.bg {
+/* Asterlight Font (tu veux qu'il te fasse quoi le minotaure ?) */
+@font-face {
+    font-family: "Asterlight";
+    src: url("assets/Asterlight-Regular.ttf");
+}
+
+body {
+    font-family: "Asterlight", sans-serif;
+}
+
+/* Parallax infinie */
+body::before {
+    content: "";
     position: fixed;
-    inset: 0;
-    background: url("assets/background.png");
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    pointer-events: none;
+
+    background-image: url("assets/background.png");
     background-repeat: repeat;
     background-size: auto;
-    z-index: -10;
+
+    /* on déplace le fond, pas le calque */
+    background-position-y: calc(var(--scroll) * 0.4);
 }
+
+
+
 
 /* HEADER */
 header {
     position: relative;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0px;
+    padding-top: 0;
 }
 
 /* Nuage (2/3 largeur) */
 .header-cloud {
     width: 66%;
     display: block;
-    margin: 0 auto;
+    margin: 0px auto;
     pointer-events: none;
+    display: block;
 }
 
 /* NAVIGATION */
 .header-nav {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     width: 66%;
     transform: translate(-50%, -50%);
@@ -43,9 +67,9 @@ header {
 }
 
 .header-nav a {
-    color: white;
-    font-family: sans-serif;
-    font-size: 1.1rem;
+    color: #3e2f7a;
+    font-family: "Asterlight", sans-serif;
+    font-size: 3rem;
     text-decoration: none;
     transition: opacity 0.2s;
 }
@@ -55,12 +79,12 @@ header {
 }
 
 .nav-logo {
-    height: 40px;
+    height: 60px;
 }
 
 /* HERO SECTION */
 .hero {
-    margin-top: 80px;
+    margin-top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,10 +94,12 @@ header {
 .hero-illustration {
     position: relative;
     display: inline-block;
+    transform: translateY(-20%);
+
 }
 
 .hero-illu {
-    width: 400px; /* ajustable selon ton art */
+    width: 1300px; /* ajustable selon ton art */
     display: block;
 }
 
@@ -81,6 +107,6 @@ header {
     position: absolute;
     inset: 0;
     margin: auto;
-    width: 200px; /* taille du logo superposé */
+    width: 0%; /* taille du logo superposé */
     transform: translateY(-10%);
 }
