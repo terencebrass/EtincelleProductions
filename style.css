@@ -16,6 +16,15 @@ body {
 }
 
 /* Parallax infinie */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("assets/background.png");
+    background-repeat: repeat;
+    background-size: 100%;
+    background-attachment: fixed; /* optionnel, pour effet plus stable */
+}
+/* 
 body::before {
     content: "";
     position: fixed;
@@ -31,11 +40,9 @@ body::before {
     background-size: 100%;
 
     /* on déplace le fond, pas le calque */
-    background-position-y: calc(var(--scroll) * 0.4);
+/*    background-position-y: calc(var(--scroll) * 0.4);
 }
-
-
-
+*/
 
 /* HEADER */
 header {

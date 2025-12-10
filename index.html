@@ -35,11 +35,13 @@
 
 
 <script>
-window.addEventListener("scroll", () => {
-    document.body.style.setProperty('--scroll', window.scrollY);
+const speed = 0.2; // vitesse du parallax, 0.1 = très lent, 1 = synchro avec scroll
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    document.body.style.backgroundPosition = `0px ${scrollTop * speed}px`;
 });
 </script>
-
 
 </body>
 </html>
