@@ -21,14 +21,14 @@ body {
     padding: 0;
 
     background-image: 
-        url("assets/background.png"),
         url("assets/pillar-top.png"),
-        url("assets/pillier-right.png");
+        url("assets/pillier-top.png"),
+        url("assets/background.png");
 
     background-repeat: 
-        repeat,
         repeat-y,
-        repeat-y;
+        repeat-y,
+        repeat;
 
     background-size: 
         100%,
@@ -36,9 +36,9 @@ body {
         100%;
 
     background-position:
-        0px 0px,
         left top,
-        right top;
+        right top,
+        0px 0px;
 
     background-attachment: scroll;
     z-index: -9999;
