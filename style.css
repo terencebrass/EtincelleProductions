@@ -21,8 +21,8 @@ body {
     padding: 0;
 
     background-image: 
-        url("assets/pillar-top.png"),
-        url("assets/pillier-top.png"),
+        url("assets/pillar-top-left.png"),
+        url("assets/pillier-top_right.png"),
         url("assets/background.png");
 
     background-repeat: 
@@ -136,4 +136,5 @@ header {
     width: 0%; /* taille du logo superposé */
     transform: translateY(-10%);
 }
+
 
