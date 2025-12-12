@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <title>Nom du Studio</title>
+    <title>L'étincelle Productions</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -35,13 +35,19 @@
 
 
 <script>
-const speed = 0.2; // vitesse du parallax, 0.1 = très lent, 1 = synchro avec scroll
+const speed = 0.2;
 
 window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    document.body.style.backgroundPosition = `0px ${-scrollTop * speed}px`;
+    const scrollY = window.scrollY;
+
+    document.body.style.backgroundPosition = `
+        left ${scrollY * 0.8}px,     /* pilier gauche */
+        right ${scrollY * 0.8}px,    /* pilier droit */
+        0px ${scrollY * 0.8}px       /* fond */
+    `;
 });
 </script>
+
 
 </body>
 </html>

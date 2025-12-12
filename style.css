@@ -19,10 +19,29 @@ body {
 body {
     margin: 0;
     padding: 0;
-    background-image: url("assets/background.png");
-    background-repeat: repeat;
-    background-size: 100%;
-    background-attachment: fixed; /* optionnel, pour effet plus stable */
+
+    background-image: 
+        url("assets/background.png"),
+        url("assets/pillar-top.png"),
+        url("assets/pillier-right.png");
+
+    background-repeat: 
+        repeat,
+        repeat-y,
+        repeat-y;
+
+    background-size: 
+        100%,
+        100%, 
+        100%;
+
+    background-position:
+        0px 0px,
+        left top,
+        right top;
+
+    background-attachment: scroll;
+    z-index: -9999;
 }
 /* 
 body::before {
