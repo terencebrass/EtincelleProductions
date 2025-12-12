@@ -35,17 +35,27 @@
 
 
 <script>
-const speed = 0.2;
+let scrollY = 0;
+const speedBg = 0.8;   // fond
+const speedPillars = 0.8;  // piliers
+
+function updateParallax() {
+    // On anime ici, pas dans l'événement scroll
+    document.body.style.backgroundPosition = `
+        left ${scrollY * speedPillars}px, 
+        right ${scrollY * speedPillars}px, 
+        0px ${scrollY * speedBg}px
+    `;
+
+    requestAnimationFrame(updateParallax);
+}
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    document.body.style.backgroundPosition = `
-        left ${scrollY * 0.8}px,     /* pilier gauche */
-        right ${scrollY * 0.8}px,    /* pilier droit */
-        0px ${scrollY * 0.8}px       /* fond */
-    `;
+    scrollY = window.scrollY;
 });
+
+// Démarrage de l’animation
+updateParallax();
 </script>
 
 
