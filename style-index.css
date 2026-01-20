@@ -18,7 +18,7 @@ body {
     padding: 0;
     font-family: "Asterlight", sans-serif;
     background: 
-        url("assets/illustrations/background.png"),
+        url("assets/illustrations/background.PNG"),
         linear-gradient(to bottom, #030d3c, #031558); /* Dégradé en dessous */
     background-repeat: repeat, repeat;
     background-size: contain, contain;
@@ -712,4 +712,5 @@ body {
   .texte-intro {
     font-size: clamp(1rem, 2.4vw, 4rem);
   }
+
 }
