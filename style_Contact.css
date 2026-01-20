@@ -1,0 +1,401 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== FONTS ========== */
+@font-face {
+    font-family: "Asterlight";
+    src: url("assets/fonts/Asterlight-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Starstruck";
+    src: url("assets/fonts/Starstruck.ttf");
+}
+
+@font-face {
+    font-family: "InknutAntiqua";
+    src: url("assets/fonts/InknutAntiqua-Light.ttf");
+}
+
+body {
+    font-family: "Asterlight", sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: 
+        url("assets/illustrations/Bg-Contact.jpeg"),
+        linear-gradient(to bottom, #030d3c, #031558);
+    background-repeat: repeat, repeat;
+    background-size: contain, contain;
+}
+
+/* ========== PAGE CONTACT BACKGROUND ========== */
+.page-contact {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(to bottom, #030d3c, #031558);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-contact::before {
+    content: "";
+    position: absolute; 
+    inset: 0;
+    background: url("assets/illustrations/Bg-Contact.jpeg") no-repeat center;
+    background-size: cover;
+    background-position: center 0px;
+    opacity: 0.6; 
+    z-index: -1;
+    transition:
+     transform 0.4s ease,
+     opacity 0.2s ease;
+}
+
+/* ========== PAGE WRAPPER ========== */
+.page-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* ========== HEADER ========== */
+.header {
+    position: relative;
+    width: 130%;
+    transform: translateX(-10%);
+    margin-top: 0px;
+    padding-top: 0px;
+    z-index: 0;
+}
+
+.header-cloud {
+    position : absolute;
+    width: clamp(70%, 70vw, 90%);
+    display: block;
+    margin: 0px 50%;
+    transform: translate(-51%, -20%);
+    clip-path: inset(0 7% 0 5%);
+    pointer-events: none;
+    transition: width 0.8s ease;
+    /* display: block; */
+}
+
+/* NAVIGATION */
+.header-nav {
+    position: absolute;
+    /* top: -160px; */
+    left: 51%;
+    transform: translateX(-50%);
+    width: 54%;
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition:
+        transform 0.4s ease,
+        opacity 0.2s ease;
+}
+
+.header-nav a {
+    position: relative;
+    color: #3e2f7a;
+    font-family: "Asterlight", sans-serif;
+    transform: translateX(-50%);
+    font-size: clamp(1.2rem, 4.2vw, 5rem);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.header-nav a:hover {
+    opacity: 0.7;
+}
+
+.nav-logo {
+    height: clamp(20px, 6vw, 60px);
+}
+
+/* ========== PILIERS DESKTOP ========== */
+.pillar-L {
+    position: absolute;
+    top: -8px;
+    left: 12%;
+    width: clamp(70px, 10vw, 140px);
+    height: auto !important; /* ou une valeur fixe en vh */
+    min-height:100vh !important; /* hauteur minimum */
+    transform: translateX(
+        clamp(-50px, -20vw, 0px)
+    );
+    transition: transform 0.4s ease;
+    z-index: 10;
+}
+
+.pillar-R {
+    position: absolute;
+    top: -8px;
+    right: 12%;
+    width: clamp(70px, 10vw, 140px);
+    height: auto !important;
+    min-height: 100vh !important;
+    transform: 
+        scaleX(-1) 
+        translateX(clamp(-50px, -20vw, 0px)); /* ← même valeur mais avec scaleX avant */
+    transition: transform 0.4s ease;
+    z-index: 10;
+}
+
+.pillar-top-L {
+    position: absolute;
+    top: -4px;
+    left: 4%;
+    width: clamp(70px, 10vw, 140px);
+    height: auto !important; /* ou une valeur fixe en vh */
+    min-height:100vh !important; /* hauteur minimum */
+    transform: translateX(
+        clamp(-68px, -40vw, 0px)
+    );
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.pillar-top-R {
+    position: absolute;
+    top: -4px;
+    right: 4%;
+    width: clamp(70px, 10vw, 140px);
+    height: auto !important;
+    min-height: 100vh !important;
+    transform: 
+        scaleX(-1) 
+        translateX(clamp(-68px, -40vw, 0px)); /* ← même valeur */
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+
+.side-pillar-L {
+    position: absolute;
+    top: 0;
+    left: -0.5%;
+    width: clamp(20%, 22vw, 140%);
+    height: auto !important; /* ou une valeur fixe en vh */
+    min-height:100vh !important; /* hauteur minimum */
+    transform: translateX(
+        clamp(-60px, -20vw, 0px)
+    );
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.side-pillar-R {
+    position: absolute;
+    top: 0;
+    right: -0.5%;
+    width: clamp(20%, 22vw, 140%);
+    height: auto !important;
+    min-height: 100vh !important;
+    transform: 
+        scaleX(-1) 
+        translateX(clamp(-60px, -20vw, 0px)); /* ← même valeur négative */
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+/* prennent toute la hauteur de l'écran*/
+.pillar-L,
+.pillar-R,
+.pillar-top-L,
+.pillar-top-R,
+.side-pillar-L,
+.side-pillar-R {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+/* ========== CONTENU ========== */
+.part2Contact {
+    flex: 1;
+    padding-top: 10vh;
+    padding-bottom: 4vh;
+}
+
+.titre-contact {
+    padding-top: 6%;
+    padding-bottom: 20px;
+    line-height: 0.9;
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: center;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    background: linear-gradient(90deg, #e1a1ea, #ffe1a4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+}
+
+.titre-contact .police1 {
+    font-family: "Starstruck", sans-serif;
+    font-weight: 300;
+}
+
+.titre-contact .police2 {
+    font-family: "InknutAntiqua", sans-serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.texte-contact {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    margin: 0 auto;
+    max-width: clamp(70%, 40vw, 40%);
+    text-align: center;
+    font-size: clamp(1.8rem, 2.7vw, 3.7rem);
+    white-space: pre-line;
+    background: linear-gradient(90deg, #ffffff, #ffe1a4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+}
+
+/* ========== FOOTER ========== */
+.part3Contact {
+    margin-top: 0;
+}
+
+.page-contact .footer {
+    margin: 0 auto 20px;
+    margin-bottom: 0 !important;
+    padding: 30px 0;
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: sticky;
+    z-index: 9999;
+}
+
+.footer-logo {
+    position: relative;
+    z-index: 10000;
+    pointer-events: auto;
+}
+
+.footer-logo img {
+    width: 100px;
+    cursor: pointer;
+}
+
+.footer-email-wrapper {
+    position: relative;
+    z-index: 10000;
+}
+
+.copy-message {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.copy-message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.footer-email {
+    background: none;
+    border: none;
+    font-family: "Asterlight", sans-serif;
+    font-size: clamp(1rem, 2vw, 4rem);
+    color: #ffffff;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+}
+
+.footer-email:hover {
+    opacity: 0.7;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 25px;
+    position: relative;
+    z-index: 10000;
+}
+
+.footer-socials a {
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+}
+
+.footer-socials img {
+    width:clamp(25px, 5vw, 40px);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* ========== FIX RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+
+    /* header */
+    .header-cloud {
+        transform: translate(-51%, -10%);
+    }
+
+    .header-nav {
+        transform: translate(-45%, 8%);
+    }
+
+    .nav-logo {
+        transform: translate(0%, 0%);
+    }
+
+    .page-contact::before {
+        transition:
+         transform 0.4s ease,
+         opacity 0.2s ease;
+    }
+
+    /* Stabilise le contenu */
+    .part2Contact {
+        padding-top: 12vh !important; /* ← ajuste selon la hauteur du header */
+        margin-top: 0 !important;
+    }
+
+    .titre-contact,
+    .texte-contact {
+        margin-top: 0 !important;
+        transform: none !important;
+    }
+}

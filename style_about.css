@@ -1,0 +1,587 @@
+/* ===================== */
+/* RESET GLOBAL */
+/* ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== */
+/* FONT */
+/* ===================== */
+@font-face {
+    font-family: "Asterlight";
+    src: url("assets/fonts/Asterlight-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Starstruck";
+    src: url("assets/fonts/Starstruck.ttf");
+}
+
+/* ===================== */
+/* BODY / BACKGROUND */
+/* ===================== */
+html {
+    overflow-x: hidden;
+
+}
+
+body {
+    overflow-y: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Asterlight", sans-serif;
+
+    background:
+        url("assets/illustrations/background.png"),
+        linear-gradient(to bottom, #15235dce, #131937); /* Dégradé en dessous */
+    background-repeat: repeat, no-repeat;
+    background-size: 800px auto, cover;
+    background-position: center top, center;
+    background-color: #091440;
+    
+}
+
+/* ===================== */
+/* PART 1 */
+/* ===================== */
+.part1 {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    overflow: visible;
+}
+
+/* ===================== */
+/* HEADER */
+/* ===================== */
+header {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+
+}
+
+/* Nuage */
+.header-cloud {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Navigation */
+.header-nav {
+    position: relative;
+    left: 16.5%;
+    width: 66%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 11;  
+}
+
+.header-nav a {
+    color: #3e2f7a;
+    font-size: clamp(3.2rem, 4.2vw, 4rem);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.header-nav a:hover {
+    opacity: 0.7;
+}
+
+.nav-logo {
+    height: 60px;
+}
+
+/* ===================== */
+/* PILIERS */
+/* ===================== */
+
+.pillars-desktop img {
+    pointer-events: none;
+}
+
+/* Conteneur gauche */
+.pillars-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Haut */
+.pillar-top-L {
+    display: block;
+    width: 100%;
+    transform: scaleY(-1);
+    z-index: 10;
+}
+
+/* Milieu */
+.pillar-mid-L {
+    width: 50%;
+    transform: scaleY(-1);
+    z-index: 10;
+    clip-path: inset(69.7% 0% 0% 0%);
+}
+
+/* Nouveau SIDE PILLAR */
+.pillar-side-L {
+    width: 150%;
+    margin-top: -1px; /* colle */
+    transform: scaleY(1) translatey(-35%) translateX(-15%);
+    z-index: 8;
+    display: block;
+    left: 0;
+}
+
+/* Conteneur droit */
+.pillars-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Haut */
+.pillar-top-R {
+    display: block;
+    width: 100%;
+    transform: scaleX(-1) scaleY(-1);
+    z-index: 10;
+}
+
+/* Milieu */
+.pillar-mid-R {
+    width: 50%;
+    transform: scaleX(-1) scaleY(-1);
+    z-index: 10;
+    clip-path: inset(69.7% 0% 0% 0%);
+    
+}
+
+/* Nouveau SIDE PILLAR en miroir */
+.pillar-side-R {
+    width: 150%;
+    margin-top: -1px; /* colle */
+    transform: scaleX(-1) scaleY(1) translatey(-35%) translateX(-15%);
+    z-index: 8;
+}
+
+/* Troisièmes piliers */
+.pillar-bottom-L,
+.pillar-bottom-R {
+    width: 25%;
+    margin-top: -1px; /* colle contre le 2ᵉ */
+    z-index: 9;
+}
+
+.pillar-bottom-L {
+    transform: translateX(-15%) translateY(-110%);
+}
+
+
+.pillar-bottom-R {
+    transform: scaleX(-1) translateX(-15%) translateY(-95%);
+    --sx: -1;
+}
+
+/* Mobile = caché */
+.pillars-mobile {
+    display: none;
+}
+
+.pillars-left {
+    width: 20%;
+    margin-top: -1px; /* colle */
+    transform: scaleY(1.) translatey(0%) translateX(-15%);
+    z-index: 8;
+    transform-origin: top;
+}
+
+@media (max-width: 1000px) {
+
+    .pillar-side-R {
+        transition: opacity 0.3s ease;
+        transform-origin: top;
+        transform: scaleX(-1) scaleY(3) translatey(-15%) translateX(-5%);
+        clip-path: inset(4.5% 0% 0% 0%);
+    }
+
+    .pillar-side-L {
+        transition: opacity 0.3s ease;
+        transform-origin: top;
+        transform: scaleY(3) translatey(-15%) translateX(-5%);
+        clip-path: inset(4.5% 0% 0% 0%);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .pillar-side-R {
+        transition: opacity 0.3s ease;
+        transform-origin: top;
+        transform: scaleX(-1) scaleY(3) translatey(-15%) translateX(-5%);
+        clip-path: inset(4.5% 0% 0% 0%);
+    }
+
+    .pillar-side-L {
+        transition: opacity 0.3s ease;
+        transform-origin: top;
+        transform: scaleY(3) translatey(-15%) translateX(-5%);
+        clip-path: inset(4.5% 0% 0% 0%);
+    }
+}
+
+.section-title {
+    background: linear-gradient(to left, #ffc5ff, #ffd06a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+/* ===================== */
+/* ABOUT SECTION */
+/* ===================== */
+
+.about-section .section-title {
+    margin-top: 3%;
+}
+
+.about-section {
+    text-align: center;
+    padding: 10rem 0.4rem 20rem;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.about-section .section-title {
+    font-family: "Asterlight", sans-serif;
+    color: #f5abff;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.section-title .first-letter {
+    font-family: "Starstruck", sans-serif !important;
+}
+
+.about-section p {
+    font-size: clamp(2.3rem, 2vw, 7rem);
+    font-weight: 400;
+    max-width: 1000px;
+    margin: 0 auto 1.5rem;
+}
+
+.about-section .about-wrapper {
+    max-width: calc(100% - 2 * 18%); /* Limite par rapport aux piliers */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Pour desktop large */
+@media (min-width: 1200px) {
+    .about-section .about-wrapper {
+        max-width: 960px; /* fixe la largeur maximale pour grands écrans */
+    }
+}
+
+/* Pour tablettes */
+@media (max-width: 1199px) {
+    .about-section .about-wrapper {
+        max-width: 80%; /* réduit un peu la largeur */
+    }
+
+    .about-section {
+     padding: 10rem 0.4rem 5rem;
+   }
+}
+
+/* Pour mobile */
+@media (max-width: 768px) {
+    .about-section .about-wrapper {
+        max-width: 90%; /* laisse un peu d’espace sur les côtés */
+        padding: 0 1rem;
+    }
+
+    .about-section {
+     padding: 10rem 0.4rem 5rem;
+   }
+}
+
+
+/* ===================== */
+/* TEAM SECTION CLEAN */
+/* ===================== */
+
+
+.team-section .section-title {
+    font-family: "Asterlight", sans-serif;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+
+}
+
+.section-title .first-letter {
+    font-family: "Starstruck", sans-serif !important;
+}
+
+.team-section {
+    position: relative;
+    z-index: 2;                
+    text-align: center;
+    padding: 6rem 2rem;        
+    display: flex;
+    flex-direction: column;
+    align-items: center;       
+    border-radius: 32px;
+    max-width: 1400px;          
+    margin: 0 auto 6rem auto;
+
+     
+
+
+    /* Fondu sur tous les côtés */
+    -webkit-mask-image: 
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-composite: destination-in;
+
+}
+
+
+/* Titre centré */
+.team-section .section-title {
+    font-size: 6rem;
+    font-weight: none;
+    color: #f6b6ff;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* GRID des membres */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes fixes */
+    gap: 2rem;           /* espace entre les photos */
+    width: 117%;
+    justify-items: center; /* centre chaque cellule horizontalement */
+}
+
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur très petit écran */
+    }
+}
+
+
+
+/* ===================== */
+/* TEAM MEMBER */
+/* ===================== */
+.team-member {
+    position: relative; /* pour overlay et rôle centré */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* IMAGE */
+.team-member img {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+    /* Ombre douce sous la photo */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+/* Overlay sombre + rôle */
+.team-member .role {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -170%);
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none; /* ne bloque pas le hover sur l'image */
+    display: none !important;
+}
+
+/* Lien sous la photo */
+.team-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    color: #ff8800;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.team-link:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* HOVER EFFECT */
+.team-member:hover img {
+    transform: translateY(-10px);      /* photo qui monte */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35); /* ombre plus grande sous la photo */
+}
+
+.team-member:hover .role {
+    opacity: 1; /* rôle apparaît au centre de la photo */
+}
+
+
+/* =================== */
+/* ===== FOOTER ====== */
+/* =================== */
+
+.footer {
+    padding: 60px 0 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 9999;
+}
+
+.footer-logo {
+    position: relative; /* ← AJOUTE */
+    z-index: 10000; /* ← AJOUTE */
+    pointer-events: auto; /* ← FORCE L'INTERACTION */
+}
+.footer-logo img {
+    width: 100px;
+    cursor: pointer;
+    position: relative; /* ← AJOUTE */
+    z-index: 10001; /* ← AJOUTE */
+}
+
+.footer-email-wrapper {
+    position: relative;
+    z-index: 10000;
+}
+
+/* Message "Copié" */
+.copy-message {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, 5px);
+
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 100;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Visible quand actif */
+.copy-message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Email */
+.footer-email {
+    background: none;
+    border: none;
+
+    font-family: "Asterlight", sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+
+    cursor: pointer;
+    transition: opacity 0.2s;
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+}
+
+.footer-email:hover {
+    opacity: 0.7;
+}
+
+/* Réseaux */
+.footer-socials {
+    display: flex;
+    gap: 25px;
+
+    position: relative; /* ← AJOUTE */
+    z-index: 10000; /* ← AJOUTE */
+}
+
+.footer-socials a {
+    position: relative; /* ← AJOUTE */
+    z-index: 10001; /* ← AJOUTE */
+    pointer-events: auto; /* ← FORCE L'INTERACTION */
+}
+
+.footer-socials img {
+    width: 36px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+
+    position: relative; /* ← AJOUTE */
+    z-index: 10002; /* ← AJOUTE */
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.team-section {
+    margin-top: -6rem;
+}
+
+

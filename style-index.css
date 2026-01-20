@@ -1,0 +1,715 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asterlight Font (tu veux qu'il te fasse quoi le minotaure ?) */
+@font-face {
+    font-family: "Asterlight";
+    src: url("assets/fonts/Asterlight-Regular.ttf");
+}
+
+
+/* Backgroung */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Asterlight", sans-serif;
+    background: 
+        url("assets/illustrations/background.png"),
+        linear-gradient(to bottom, #030d3c, #031558); /* Dégradé en dessous */
+    background-repeat: repeat, repeat;
+    background-size: contain, contain;
+}
+
+
+/* =================================================================== */
+/* ============================= PART1 =============================== */
+/* =================================================================== */
+
+.part1 {
+    position: relative;
+    width: 100%;
+    /* height: clamp(300px, 115vh, 1200px); */
+    z-index: 0;
+    overflow: hidden;
+    /* margin-bottom: -810px; */
+    /* background-color: yellow; */
+}
+
+.header-cloud,
+.pillar-L,
+.pillar-R,
+.pillar-top-L,
+.pillar-top-R,
+.side-pillar-L,
+.side-pillar-R,
+.hero-illu {
+    pointer-events: none;
+}
+
+/* =================== */
+/* ===== HEADER ====== */
+/* =================== */
+
+.header {
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+    z-index: 100;
+    /* background-color: green; */
+}
+
+/* Nuage (2/3 largeur) */
+.header-cloud {
+    position : absolute;
+    width: 72%;
+    display: block;
+    margin: 0px 50%;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+    /* display: block; */
+}
+
+/* NAVIGATION */
+.header-nav {
+    position: absolute;
+    /* top: -160px; */
+    top: clamp(0%, calc(0% + 0.5% * ((100vw - 320px) / 1120px)), 2%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(1%, 66%, 80%);
+    /* top: clamp(0, 5vh, 100px); */
+    max-height: 10vh;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.header-nav a {
+    position: relative;
+    color: #3e2f7a;
+    font-family: "Asterlight", sans-serif;
+    font-size: clamp(1rem, 3.9vw, 5rem);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.header-nav a:hover {
+    opacity: 0.7;
+}
+
+.nav-logo {
+    height: clamp(25px, 5vw, 100px);
+}
+
+/* =================== */
+/* ==== HEADER END === */
+/* =================== */
+
+
+/* =================== */
+/* == ILLUSTRATION === */
+/* =================== */
+
+.hero {
+    position: relative;
+    /* margin-top: clamp(5px, 34vh, 50px); 245px */
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    z-index: -10;
+    /* background-color: red;
+    border-color: red; */
+
+}
+
+.hero-illu {
+    position: relative;
+    /* display: none; */
+    display: block;
+    top: 0px;
+    left: 50%;
+    width: 95%;
+    transform: translate(-50%, 0);
+    z-index: -10;
+}
+
+/* =================== */
+/* = ILLUSTRATION END= */
+/* =================== */
+
+
+
+/* =================== */
+/* == PILIERS PART1 == */
+/* =================== */
+
+.pillar-L {
+    position: absolute;
+    top: -8px;
+    left: 12%;
+    width: 7%;
+    z-index: 10;
+}
+
+.pillar-R {
+    position: absolute;
+    top: -8px;
+    right: 12%;
+    width: 7%;
+    transform: scaleX(-1);
+    z-index: 10;
+}
+
+.pillar-top-L {
+    position: absolute;
+    top: -4px;
+    left: 4%;
+    width: 8%;
+    z-index: 2;
+}
+
+.pillar-top-R {
+    position: absolute;
+    top: -4px;
+    right: 4%;
+    width: 8%;
+    transform: scaleX(-1);
+    z-index: 2;
+}
+
+.side-pillar-L {
+    position: absolute;
+    top: 0;
+    left: -0.5%;
+    width: 21.5%;
+    z-index: 1;
+}
+
+.side-pillar-R {
+    position: absolute;
+    top: 0;
+    right: -0.5%;
+    width: 21.5%;
+    transform: scaleX(-1);
+    z-index: 1;
+}
+
+
+/* .pillar-L,
+.pillar-R,
+.pillar-top-L,
+.pillar-top-R,
+.side-pillar-L,
+.side-pillar-R {
+    display: none;
+} */
+
+/* =================== */
+/*  PILIERS PART1 END  */
+/* =================== */
+
+
+/* =================================================================== */
+/* ========================== PART1 END ============================== */
+/* =================================================================== */
+
+
+/* =================================================================== */
+/* ============================= PART2 =============================== */
+/* =================================================================== */
+
+.part2 {
+    position: relative;
+    /* margin-top: -352px; */
+    width: 100%;
+    /* height: 400px; 1126px */
+    pointer-events: none; /* ne bloque pas les clics */
+    /* margin-bottom: -1126px; */
+    z-index: 1;
+    /* background-color: red; */
+    overflow: hidden;
+}
+
+/* =================== */
+/* ====== TEXTE ====== */
+/* =================== */
+
+.presentation {
+    position: relative;
+    /* padding-top: 55px; */
+    display: block;
+}
+
+.texte-intro {
+    /* padding-top: clamp(0px, 2%, 50px); */
+    position: relative;
+    margin: 0 auto;       /* centre horizontalement */
+    max-width: clamp(60%, 1000px, 74%);     /* largeur maximale du bloc */
+    /* padding: 0 20px; */
+    color: #3e2f7a;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    white-space: pre-line;  /* respecte les sauts de ligne dans le HTML */
+    text-align: center; /* centre tout le texte à l'intérieur du bloc */
+    
+    background: linear-gradient(90deg, #ff7c90, #ffe1a4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    z-index: 1;
+    display: block;
+    /* border-top: cyan; */
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.grand-texte {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    font-weight: bold;
+}
+
+/* =================== */
+/* ==== TEXTE END ==== */
+/* =================== */
+
+/* =================== */
+/* == PILIERS TRANS == */
+/* =================== */
+
+.pillar-horiz-top,
+.pillar-horiz-und {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    display: block;
+}
+
+/* =================== */
+/*  PILIERS TRANS END  */
+/* =================== */
+
+/* =================== */
+/* == PILIERS PART2 == */
+/* =================== */
+
+.pillar-pckg-L {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: clamp(1%, calc(1% + 199 * ((100vw - 375px) / 1545)), 200%);
+    z-index: 1;
+    /* background-color: yellow; */
+}
+
+.pillar-fat-L {
+    position: absolute;
+    top: 0;
+    right: 28px;
+    height: 100%;
+    /* transform: translateX(100%); */
+    z-index: 1;
+}
+
+.side-bot-L {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    transform: translateX(100%);
+    height: 100%;
+    z-index: 11;
+}
+
+.arch-L {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20%;
+    z-index: 13;
+}
+
+.pillar-pckg-R {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: clamp(1%, calc(1% + 199 * ((100vw - 375px) / 1545)), 200%);
+    z-index: 1;
+    /* background-color: yellow; */
+}
+
+.pillar-fat-R {
+    position: absolute;
+    top: 0;
+    left: 28px;
+    height: 100%;
+    transform: scaleX(-1);
+    /* transform: translateX(-100%); */
+    z-index: 1;
+}
+
+.side-bot-R {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    transform: scaleX(-1) translateX(100%);
+    height: 100%;
+    z-index: 11;
+}
+
+.arch-R {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20%;
+    transform: scaleX(-1);
+    z-index: 13;
+}
+
+/* BLOCK DISPLAY */
+.pillar-fat-L,
+.pillar-fat-R,
+.side-bot-L,
+.side-bot-R,
+.crop-arch-L,
+.crop-arch .arch-L,
+.crop-arch-R,
+.crop-arch .arch-R {
+    display: block;
+    top: 0;
+    bottom: 0;
+}
+
+/* =================== */
+/*  PILIERS PART2 END  */
+/* =================== */
+
+/* =================================================================== */
+/* ========================== PART2 END ============================== */
+/* =================================================================== */
+
+
+/* =================================================================== */
+/* ============================= PART3 =============================== */
+/* =================================================================== */
+
+.part3 {
+    position: relative;
+    width: 100%;
+    /* height: 1000px; */
+    z-index: 0;
+    pointer-events: none;
+    /* margin-bottom: -2100px; */
+    /* background-color: purple; */
+    overflow: hidden;
+}
+
+.video-section iframe,
+.footer,
+.footer *,
+.texte-intro {
+    pointer-events: auto;
+}
+
+/* =================== */
+/* ===== VIDEO ======  */
+/* =================== */
+
+.video-section {
+    /* margin-top: 3%; */
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.video-section iframe {
+    /* width: 74%; */
+    width: clamp(74%, calc(95% - 21% * ((100vw - 320px) / 1120px)), 95%);
+    aspect-ratio: 16 / 9;
+    border-radius: 0px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* =================== */
+/* === VIDEO END ====  */
+/* =================== */
+
+
+/* =================== */
+/* ===== FOOTER ====== */
+/* =================== */
+
+.footer {
+    /* margin-top: 100px; */
+    padding: 5% 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1%, 3%, 5%);
+    max-width: 80%;
+
+    position: relative;
+    z-index: 9999;
+    /* background-color: pink; */
+
+}
+
+.footer-logo {
+    position: relative; /* ← AJOUTE */
+    width: clamp(25px, 5vw, 100px);
+    z-index: 10000; /* ← AJOUTE */
+    pointer-events: auto; /* ← FORCE L'INTERACTION */
+    /* background-color: orange; */
+
+}
+.footer-logo img {
+    width: 100%;
+    cursor: pointer;
+    position: relative; /* ← AJOUTE */
+    z-index: 10001; /* ← AJOUTE */
+    /* background-color: yellow; */
+}
+
+.footer-email-wrapper {
+    position: relative;
+    max-width: 80%;
+    z-index: 10000;
+    /* background-color: red; */
+
+}
+
+/* Message "Copié" */
+.copy-message {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, 5px);
+
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 100;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Visible quand actif */
+.copy-message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Email */
+.footer-email {
+    background: none;
+    border: none;
+
+    font-family: "Asterlight", sans-serif;
+    font-size: clamp(1.5rem, 2.2vw, 5rem);
+    color: #ffffff;
+
+    cursor: pointer;
+    transition: opacity 0.2s;
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+}
+
+.footer-email:hover {
+    opacity: 0.7;
+}
+
+/* Réseaux */
+.footer-socials {
+    display: flex;
+    gap: clamp(5px, 3vw, 50px);
+
+    position: relative; /* ← AJOUTE */
+    z-index: 10000; /* ← AJOUTE */
+}
+
+.footer-socials a {
+    position: relative; /* ← AJOUTE */
+    z-index: 10001; /* ← AJOUTE */
+    pointer-events: auto; /* ← FORCE L'INTERACTION */
+}
+
+.footer-socials img {
+    width: clamp(20px, 4vw, 90px);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+
+    position: relative; /* ← AJOUTE */
+    z-index: 10002; /* ← AJOUTE */
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* =================== */
+/* === FOOTER END ==== */
+/* =================== */
+
+/* =================== */
+/* == PILIERS PART3 == */
+/* =================== */
+
+.pillar-pckg3-L{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: clamp(5%, calc(5% + 8% * ((100vw - 320px) / 1120px)), 13%);
+    z-index: 1;
+    /* background-color: yellow; */
+}
+
+.pillar-bot-L {
+    position: absolute;
+    right: 0;
+    transform: translateX(25%);
+    height: 100%;
+    z-index: 2;
+}
+
+.side-wall-L {
+    position: absolute;
+    right: 0;
+    transform: translateX(41%);
+    height: 100%;
+    z-index: 1;
+}
+
+.pillar-pckg3-R{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: clamp(5%, calc(5% + 8% * ((100vw - 320px) / 1120px)), 13%);
+    z-index: 1;
+    /* background-color: yellow; */
+}
+
+.pillar-bot-R {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    transform: translateX(-25%) scaleX(-1);
+    z-index: 2;
+}
+
+.side-wall-R {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    transform: translateX(-41%) scaleX(-1);
+    z-index: 1;
+}
+
+.pillar-horiz-bot {
+    position: absolute;
+    /* bottom: 0; */
+    left: center;
+    width: 100%;
+    /* transform: translateY(100%); */
+    z-index: 3;
+}
+
+
+/* =================== */
+/*  PILIERS PART3 END  */
+/* =================== */
+
+/* =================================================================== */
+/* ========================== PART3 END ============================== */
+/* =================================================================== */
+
+/* =================================================================== */
+/* ========================= RESPONSIVE ============================== */
+/* =================================================================== */
+
+@media screen and (max-width: 1370px) {
+    .pillar-pckg-L,
+    .pillar-pckg-R {
+        width: clamp(0.5%, calc(0.5% + 99 * ((100vw - 375px) / 1545)), 100%);
+    }
+
+    .pillar-fat-L,
+    .pillar-fat-R,
+    .arch-L,
+    .arch-R {
+        display: none;
+    }
+
+    .side-bot-L {
+        transform: translateX(80%);
+    }
+    .side-bot-R {
+        transform: scaleX(-1) translateX(80%);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    body {
+        overflow-x: hidden; /* Empêche le scroll horizontal */
+    }
+    
+    .header-nav {
+        /* left: 16.5% !important; 
+        width: 66% !important;
+        flex-direction: row;
+        gap: 10px;
+        padding: 15px 0; */
+        /* background: rgba(255, 255, 255, 0.97); */
+        /* backdrop-filter: blur(10px); */
+        /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+    }
+
+    .header-nav a {
+        /* font-size: 2rem; */
+    }
+    
+    /* Force les parts à 100% */
+    .part1,
+    .part2,
+    .part3 {
+        width: 100vw;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+@media screen and (max-width: 425px) {
+
+    .side-bot-L {
+        transform: translateX(70%);
+    }
+    .side-bot-R {
+        transform: scaleX(-1) translateX(70%);
+    }
+    .footer-email {
+        font-size: clamp(1.2rem, 2.2vw, 5rem);
+    }
+}
+
+@media (min-width: 2037px) {
+  .texte-intro {
+    font-size: clamp(1rem, 2.4vw, 4rem);
+  }
+}

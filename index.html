@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'étincelle Productions</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+
+
+<body>
+
+    
+    <div class="part1">
+
+        <header>
+            <img src="assets/head-foot/cloud.png" class="header-cloud" alt="Nuage décoratif">
+
+            <nav class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="work.html">Work</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+
+        <div class="hero">
+            <img src="assets/illustrations/illustration.png" class="hero-illu" alt="Illustration">
+        </div>
+
+
+        <img src="assets/piliers/pillar-corner.png" class="pillar-L">
+        <img src="assets/piliers/pillar-corner.png" class="pillar-R">
+
+        <img src="assets/piliers/pillar-top.png" class="pillar-top-L">
+        <img src="assets/piliers/pillar-top.png" class="pillar-top-R">
+
+        <img src="assets/piliers/side-pillar.png" class="side-pillar-L">
+        <img src="assets/piliers/side-pillar.png" class="side-pillar-R">
+        
+    </div>
+
+    <div class="interpart1n2">
+        <img src="assets/piliers/pillar-horiz.png" class="pillar-horiz-top">
+    </div>
+
+    <div class="part2">
+        
+        <div class="pillar-pckg-L">
+            <img src="assets/piliers/pillar-fat-noarch.png" class="pillar-fat-L">
+            <img src="assets/piliers/side-bot.png" class="side-bot-L">
+            <img src="assets/piliers/arch-half.png" class="arch-L">
+        </div>
+
+        <section class="presentation">
+
+            <div class="texte-intro">
+                <p>Nous sommes un collectif de production 3D. 
+                Entre production de <span class="gras">courts métrages</span>, de <span class="gras">pubs</span> et collaboration avec des <span class="gras">artistes</span> et <span class="gras">associations</span>, nous cherchons à illuminer des sujets importants avec une esthétique singulière inspirée du <span class="gras">cinéma indépendant</span>.
+
+                <span class="grand-texte">Ça commence par une étincelle !</span>
+                </p>
+            </div>
+            
+        </section>
+        
+        <div class="pillar-pckg-R">
+            <img src="assets/piliers/pillar-fat-noarch.png" class="pillar-fat-R">
+            <img src="assets/piliers/side-bot.png" class="side-bot-R">        
+            <img src="assets/piliers/arch-half.png" class="arch-R">
+        </div>
+        
+    </div>
+
+    <div class="interpart2n3">
+        <img src="assets/piliers/pillar-horiz.png" class="pillar-horiz-und">
+    </div>
+
+    <div class="part3">
+
+        <div class="pillar-pckg3-L">
+            <img src="assets/piliers/pillar-bot.png" class="pillar-bot-L">
+            <img src="assets/piliers/side-wall-pillar.png" class="side-wall-L">
+        </div>
+
+
+        <section class="video-section">
+            <iframe
+                src="https://www.youtube.com/embed/XW4oHDQXLpg?si=RF6QhQ7UMjvtehg6"
+                title="Trailer L'Étincelle Productions"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        
+        <div class="pillar-pckg3-R">
+            <img src="assets/piliers/pillar-bot.png" class="pillar-bot-R">
+            <img src="assets/piliers/side-wall-pillar.png" class="side-wall-R">
+        </div>
+
+
+        <footer class="footer">
+
+            <!-- Logo = retour à l'accueil -->
+            <a href="index.html" class="footer-logo">
+                <img src="assets/head-foot/logo.png" alt="L'Étincelle Productions">
+            </a>
+
+            <!-- Email + message -->
+            <div class="footer-email-wrapper">
+                <span class="copy-message">Copié ✓</span>
+
+                <button class="footer-email">
+                    contact@letincelleprod.com
+                </button>
+            </div>
+
+            <!-- Réseaux -->
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/letincelleproductions/" target="_blank">
+                    <img src="assets/head-foot/icon-instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/l-etincelle-productions-b0162b39a" target="_blank">
+                    <img src="assets/head-foot/icon-linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <img src="assets/piliers/pillar-horiz.png" class="pillar-horiz-bot">
+
+    <script>
+        // Attendre que la page soit complètement chargée
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailButton = document.querySelector('.footer-email');
+            const message = document.querySelector('.copy-message');
+            
+            if (emailButton && message) {
+                emailButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const email = "contact@letincelleprod.com";
+                    
+                    // Copier dans le presse-papier
+                    navigator.clipboard.writeText(email).then(() => {
+                        console.log('Email copié !'); // Pour debug
+                        message.classList.add('show');
+                        
+                        setTimeout(() => {
+                            message.classList.remove('show');
+                        }, 1500);
+                    }).catch(err => {
+                        console.error('Erreur de copie:', err);
+                        alert('Email: ' + email); // Fallback
+                    });
+                });
+            } else {
+                console.error('Bouton ou message introuvable');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Etincelle Productions</title>
+    <link rel="stylesheet" href="style_Contact.css">
+</head>
+
+
+<body class="page-contact">
+ <div class="page-wrapper">
+    <img src="assets/piliers/pillar-corner.png" class="pillar-L">
+    <img src="assets/piliers/pillar-corner.png" class="pillar-R">
+
+    <img src="assets/piliers/pillar-top.png" class="pillar-top-L">
+    <img src="assets/piliers/pillar-top.png" class="pillar-top-R">
+
+    <img src="assets/piliers/side-pillar.png" class="side-pillar-R">
+    <img src="assets/piliers/side-pillar.png" class="side-pillar-L">
+
+
+    <header class="header">
+        <img src="assets/head-foot/cloud.png" class="header-cloud" alt="Nuage décoratif">
+
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+<div class="part2Contact">
+<section class="container">
+
+    <div class="titre-contact">
+        <h1>
+            <span class="police1">C</span><span class="police2">ontact</span>
+        </h1>
+    </div>
+
+    <div class="texte-contact">
+        <p>Vous êtes artiste, musicien.ne, entrepreneur.se, ou participez à un projet associatif ?
+           
+         Vous avez un projet de court-métrage, de clip, de pub ou simplement besoin de visuels 3D ?
+            
+            Avec notre super méga top team, nous couvrons tous les départements de la production 3D, de votre idée à l’image qui crèvera les écrans.
+        </p>
+    </div>
+</section>
+</div>
+
+<div class="part3Contact">
+<footer class="footer">
+
+
+    <!-- Email + message -->
+    <div class="footer-email-wrapper">
+        <span class="copy-message">Copié ✓</span>
+
+        <button class="footer-email">
+            contact@letincelleprod.com
+        </button>
+    </div>
+
+    <!-- Réseaux -->
+    <div class="footer-socials">
+        <a href="https://www.instagram.com/letincelleproductions/" target="_blank">
+            <img src="assets/head-foot/icon-instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.linkedin.com/in/l-etincelle-productions-b0162b39a" target="_blank">
+            <img src="assets/head-foot/icon-linkedin.png" alt="LinkedIn">
+        </a>
+    </div>
+    
+</footer>
+</div>
+</div>
+
+    <script>
+        // Attendre que la page soit complètement chargée
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailButton = document.querySelector('.footer-email');
+            const message = document.querySelector('.copy-message');
+            
+            if (emailButton && message) {
+                emailButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const email = "contact@letincelleprod.com";
+                    
+                    // Copier dans le presse-papier
+                    navigator.clipboard.writeText(email).then(() => {
+                        console.log('Email copié !'); // Pour debug
+                        message.classList.add('show');
+                        
+                        setTimeout(() => {
+                            message.classList.remove('show');
+                        }, 1500);
+                    }).catch(err => {
+                        console.error('Erreur de copie:', err);
+                        alert('Email: ' + email); // Fallback
+                    });
+                });
+            } else {
+                console.error('Bouton ou message introuvable');
+            }
+        });
+    </script>
+</body>
+</html>
