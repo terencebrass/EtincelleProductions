@@ -36,7 +36,7 @@ body {
     font-family: "Asterlight", sans-serif;
 
     background:
-        url("assets/illustrations/background.png"),
+        url("assets/illustrations/background.PNG"),
         linear-gradient(to bottom, #15235dce, #131937); /* Dégradé en dessous */
     background-repeat: repeat, no-repeat;
     background-size: 800px auto, cover;
@@ -583,5 +583,6 @@ header {
 .team-section {
     margin-top: -6rem;
 }
+
 
 
